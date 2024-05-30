@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+void afisare(long long n){
+    if(n == 0){
+        return;
+    }
+    
+    long long k = 1;
+    while((k << 1) <= n){
+        k <<= 1;
+    }
+    
+    afisare(n - k);
+    cout << k << ' ';
+}
+
+int main()
+{
+    long long n;
+    
+    cin >> n;
+    
+    afisare(n);
+
+    return 0;
+}
